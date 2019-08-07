@@ -6,7 +6,8 @@ RUN apt-get update && apt-get install -y \
 	libsecret-1-dev
 
 # Ensure latest yarn.
-RUN npm install -g yarn@1.13
+RUN npm install -g yarn@1.13 \
+	&& yarn config set registry https://registry.npm.taobao.org
 
 WORKDIR /src
 COPY . .
